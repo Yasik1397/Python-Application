@@ -19,11 +19,9 @@ pipeline {
         
         stage ('Test'){
                 steps {
-                sh 'python3 -m venv venv'
-                sh '. venv/bin/activate'
-                sh 'pip install pytest' // Install pytest if needed
-                sh 'venv/bin/pytest testRoutes.py'
-                }
+                sh 'export PATH=/usr/bin:$PATH' // Replace with actual path to Python binary
+                sh 'pip install pytest'
+                sh 'pytest testRoutes.py'
         }
         
         stage ('Clean Up'){
