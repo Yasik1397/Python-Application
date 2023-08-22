@@ -19,9 +19,10 @@ pipeline {
         
         stage ('Test'){
                 steps {
-                sh 'export PATH=/var/lib/jenkins/workspace/python-application/venv/bin:$PATH' // Replace with actual path to Python binary
-                sh 'pip install pytest'
-                sh 'pytest testRoutes.py'
+                script {
+                    sh 'python3 -m venv venv'
+                    sh '. venv/bin/activate && pip install pytest'
+                    sh 'venv/bin/python -m pytest testRoutes.py'
                 }
         }
         
