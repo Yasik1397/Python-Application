@@ -22,6 +22,7 @@ pipeline {
                 sh 'export PATH=/usr/bin:$PATH' // Replace with actual path to Python binary
                 sh 'pip install pytest'
                 sh 'pytest testRoutes.py'
+                }
         }
         
         stage ('Clean Up'){
