@@ -19,6 +19,8 @@ pipeline {
         
         stage ('Test'){
                 steps {
+                sh 'python3 -m venv venv'
+                sh '. venv/bin/activate'
                 sh 'pip install pytest' // Install pytest if needed
                 sh "pytest testRoutes.py"
                 }
