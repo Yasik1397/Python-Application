@@ -8,7 +8,7 @@ pipeline {
     }
     agent {
         docker { 
-            image 'my-image' 
+            image 'python-application' 
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
@@ -43,6 +43,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
+                    sh 'docker build -t python-application:latest .'
                     img = registry + ":${env.BUILD_ID}"
                     println ("${img}")
                     dockerImage = docker.build("${img}")
