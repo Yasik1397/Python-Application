@@ -21,7 +21,7 @@ pipeline {
                 steps {
                 script {
                     sh 'python3 -m venv venv'
-                    sh '. venv/bin/activate && pip install pytest'
+                    sh '. venv/bin/activate && pip install pytest Flask'
                     sh 'venv/bin/python -m pytest testRoutes.py'
                 }
             }
