@@ -6,7 +6,12 @@ pipeline {
         githubCredential = 'mygithub'
         dockerImage = ''
     }
-    agent any
+    agent {
+        docker { 
+            image 'your-docker-image' 
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
     stages {
         
         stage('checkout') {
