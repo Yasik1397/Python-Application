@@ -8,7 +8,7 @@ pipeline {
     }
     agent {
         docker { 
-            image 'your-docker-image' 
+            image 'my-image' 
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
