@@ -22,7 +22,7 @@ pipeline {
                 sh 'python3 -m venv venv'
                 sh '. venv/bin/activate'
                 sh 'pip install pytest' // Install pytest if needed
-                sh 'source venv/bin/activate && pytest testRoutes.py'
+                sh 'venv/bin/pytest testRoutes.py'
                 }
         }
         
