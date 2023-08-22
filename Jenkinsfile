@@ -19,6 +19,7 @@ pipeline {
         
         stage ('Test'){
                 steps {
+                sh 'pip install pytest' // Install pytest if needed
                 sh "pytest testRoutes.py"
                 }
         }
