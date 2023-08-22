@@ -19,7 +19,6 @@ pipeline {
         
         stage ('Test'){
                 steps {
-                sh 'sudo apt install python3.10-venv'
                 sh 'python3 -m venv venv'
                 sh '. venv/bin/activate'
                 sh 'pip install pytest' // Install pytest if needed
